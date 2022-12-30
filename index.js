@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-var bodyParser = require('body-parser');
 const rateLimit = require('express-rate-limit');
 const morgan = require("morgan");
 
@@ -24,9 +23,7 @@ const a2f = require('./Routes/a2f');
     //standardHeaders: true
 //});
 app.use(express.json({limit: '1111111111150mb'}));
-app.use(express.urlencoded({limit: '10000000000000mb'}));
-//app.use(bodyParser.json({limit: '10000000000000000mb'}));
-//app.use(bodyParser.urlencoded({limit: '10000000000000000mb', extended: true}));
+//app.use(express.urlencoded({limit: '10000000000000mb'}));
 app.use(morgan("short"));
 //app.use(express.json());
 //app.use(limiter);
